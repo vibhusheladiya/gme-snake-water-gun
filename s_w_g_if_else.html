@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>GAME OF SNAKE, WATER, GUN</title>
+        <link href="s_w_g.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <script>
+             let user = prompt("Enter the s,w or g")
+let cpuI = Math.floor(Math.random() *3);
+let cpu=["S","W","G"][cpuI]
+
+const match = (cpu,user) =>{
+    if (cpu===user) {
+        return "NOBODY" 
+    }
+    else if(cpu==="S"&& user==="W"){
+   return "cpu"
+    }
+     else if(cpu==="S"&& user==="G"){
+        return "user"
+         }    
+         else if(cpu==="G"&& user==="W"){
+            return "user"
+            
+             }
+             else if(cpu==="G"&& user==="S"){
+                return "cpu"
+                 }
+                 else if(cpu==="W"&& user==="s"){
+                    return "user"
+                     }
+                     else if(cpu==="W"&& user==="G"){
+                        return "cpu"
+                         }
+                        }
+let result= match(cpu, user)
+ document.write(`CPU: ${cpu} <br> USER: ${user} <br> The Winner is: ${result}`)
+ 
+        </script>
+    </body>
+</html>
